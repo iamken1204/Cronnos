@@ -3,6 +3,19 @@ include "autoload_app.php";
 
 use cronnos\printers\Printer;
 use cronnos\helpers\Arr;
+use cronnos\helpers\VarDumper;
+use Pux\Mux;
+use Pux\Executor;
+
+echo "start<BR>";
+$mux = new Mux;
+$mux->get('/index.php', ['controllers\TestController', 'index']);
+$mux->get('/index.php/post', ['controllers\TestController', 'post']);
+$route = $mux->dispatch($_SERVER['REQUEST_URI']);
+Executor::execute($route);
+echo "<BR>done!";
+exit;
+
 
 // $form = new Form();
 // // $res = $form->testCRUD();
