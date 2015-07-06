@@ -1,5 +1,6 @@
 {
     "require": {
-        "catfan/medoo": "~0.9.8"
+        "catfan/medoo": "~0.9.8",
+        "corneltek/pux": "~1.5"
     }
 }
