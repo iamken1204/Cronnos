@@ -21,7 +21,7 @@ class PageView
         try {
             $target = $model::$action($id);
             if ( empty($target) )
-                throw new \Exception("query not found!", 400);
+                throw new Exception("query not found!", 400);
             $res = false;
             $cookieName = $model . $id;
             $cookieVal = md5("$model-$id-" . date("Y-m-d H"));
@@ -32,7 +32,7 @@ class PageView
                 $res = true;
             }
             return $res;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return false;
         }
     }
